@@ -61,12 +61,12 @@ Errors are either errors as returned by underlying APIs, or `FallocateError`s.
 Limitations
 ===
 
-Unfortunately the `fposix_allocateSync` and `ffallocateSync` cannot be in an
-async fashion, due to node not offering a proper way to pass file descriptors
-to child processes (only sockets and such).
+Unfortunately the `fposix_allocateSync` and `ffallocateSync` functions cannot
+be implemented in an async variant, due to node not offering a proper way to
+pass file descriptors to child processes (only sockets and such).
 
-If your OS or rather libc doesn't provide *64 implementations for offsets, the
-off_t sizes are guesses.
+If your OS or rather libc doesn't provide `*64` implementations for offsets, the
+`off_t` sizes are guesses.
 
 
 Supported platforms
